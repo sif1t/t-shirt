@@ -1,11 +1,17 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import Tshirt from '../Tshirt/Tshirt';
 
 const Home = () => {
-      const thirsts = useLoaderData();
+    const thirsts = useLoaderData();
     return (
         <div>
-            <h1>This is Home page: {thirsts.length} </h1>
+            {
+                thirsts.map(thirst => <Tshirt
+                    key={thirst._id}
+                    thirst={thirst}
+                ></Tshirt>)
+            }
         </div>
     );
 };
