@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
-
+import { Toaster } from 'react-hot-toast';
+ 
 
 import './Home.css';
 import Tshirt from '../Tshirt/Tshirt';
@@ -10,8 +11,15 @@ const Home = () => {
     const [cart, setCart] = useState([]);
 
     const handleAddToCart = tshirt => {
-        const newCart = [...cart, tshirt];
-        setCart(newCart);
+        const alreadyInCart = cart.find(ts => ts._id === tshirt._id);
+        if (alreadyInCart) {
+           
+        }
+        else {
+            const newCart = [...cart, tshirt];
+            setCart(newCart);
+        }
+
     }
 
     const handleRemoveFromCart = id => {
