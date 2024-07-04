@@ -1,11 +1,12 @@
 
 import React from 'react';
+import './Cart.css';
 
 
 const Cart = ({ cart, handleRemoveFromCart }) => {
     let message;
     if(cart.length === 0){
-        message = <h2>Your cart is empty😒</h2>
+        message = <h2 className='aqua'>Your cart is empty😒</h2>
     }
     else {
         message = <div>
@@ -15,8 +16,8 @@ const Cart = ({ cart, handleRemoveFromCart }) => {
     }
     return (
         <div>
-            <h2>Add To cart: {cart.length}</h2>
-            {cart.length > 2 ? <span>আরও কিনলে বুজবো তুমি বড়োলোক💲💵</span> : <span>ফকির দূরে গিয়া মর😏😡 </span>}
+            <h2 className={cart.length === 1 ? 'aqua2' : 'aqua4'}>Add To cart: {cart.length}</h2>
+            {cart.length > 2 ? <span className='aqua3'>আরও কিনলে বুজবো তুমি বড়োলোক💲💵</span> : <span className='aqua2'>ফকির দূরে গিয়া মর😏😡 </span>}
             {message}
             {
                 cart.map(tshirt => <p
@@ -24,6 +25,12 @@ const Cart = ({ cart, handleRemoveFromCart }) => {
                 >{tshirt.name} <button
                     onClick={ () => handleRemoveFromCart (tshirt._id)}
                 >x</button></p>)
+            }
+            {
+                cart.length === 2 && <p className='aqua4'>আর একটা কিনলে বুজবো তুমি বড়োলোক💲💵</p>
+            }
+            {
+                cart.length === 3 || <p className='aqua5'>৩ টা হোল  না 😏😡</p>
             }
         </div>
     );
@@ -34,5 +41,11 @@ export default Cart;
 /** 
  * Conditional rendering
  * 1.use if else to set a variable that will contain an element, components
- * 2. ternary: condition ? true : false
+ * 2. ternary operator: condition ? true : false
+ * 3. logical &&: (if the condition is true then the right side will be displayed)
+ * 3. logical ||: (if the condition is false then the right side will be displayed)
  **/
+
+/**
+ * Conditional Css class
+ */
