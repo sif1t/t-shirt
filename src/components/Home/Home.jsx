@@ -11,7 +11,7 @@ const Home = () => {
     const handleAddToCart = tshirt => {
         const alreadyInCart = cart.find(ts => ts._id === tshirt._id);
         if (alreadyInCart) {
-            toast('This item is already in cart');
+            toast('This item is already in cart👙😁');
         }
         else {
             const newCart = [...cart, tshirt];
@@ -44,6 +44,7 @@ const Home = () => {
     );
 };
 export default Home;
+
 
 
 
