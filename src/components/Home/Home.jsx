@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
-import { Toaster } from 'react-hot-toast';
- 
-
 import './Home.css';
 import Tshirt from '../Tshirt/Tshirt';
 import Cart from '../Cart/Cart';
+import toast from 'react-hot-toast';
 const Home = () => {
     const tShirts = useLoaderData();
     const [cart, setCart] = useState([]);
@@ -13,7 +11,7 @@ const Home = () => {
     const handleAddToCart = tshirt => {
         const alreadyInCart = cart.find(ts => ts._id === tshirt._id);
         if (alreadyInCart) {
-           
+            toast('This item is already in cart');
         }
         else {
             const newCart = [...cart, tshirt];
