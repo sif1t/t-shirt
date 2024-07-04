@@ -4,19 +4,19 @@ import Tshirt from '../Tshirt/Tshirt';
 import Cart from '../../Cart/Cart';
 import './Home.css';
 const Home = () => {
-    const thirsts = useLoaderData();
+    const tshirts = useLoaderData();
     const [cart, setCart] = useState([]);
 
-    const handleAddToCart = thirsts => {
-        console.log(thirsts);
+    const handleAddToCart = tshirt => {
+        console.log(tshirt);
     }
     return (
         <div className='home-container'>
             <div className='t-shirts-container'>
                 {
-                    thirsts.map(thirst => <Tshirt
-                        key={thirst._id}
-                        thirst={thirst}
+                    tshirts.map(tshirt => <Tshirt
+                        key={tshirt._id}
+                        thirst={tshirt}
                         handleAddToCart={handleAddToCart}
                     ></Tshirt>)
                 }
@@ -27,5 +27,6 @@ const Home = () => {
         </div>
     );
 };
-
 export default Home;
+
+
