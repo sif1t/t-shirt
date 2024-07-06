@@ -5,11 +5,8 @@
     background-color: rgb(87, 192, 45);
 }
 .aqua3{
-    background-color: #f15025;
+    background-color: #f15025; 
 }
-.aqua4{
-    background-color: #10db98;
-}
-.aqua5{
-    background-color: #ca1919;
+.bold{
+    font-weight: bold;
 }

@@ -17,6 +17,7 @@ const Cart = ({ cart, handleRemoveFromCart }) => {
     return (
         <div>
             <h2 className={cart.length === 1 ? 'aqua2' : 'aqua4'}>Add To cart: {cart.length}</h2>
+            <p className={`bold bordered ${cart.length===3 ? 'aqua2': 'aqua3'}`}>something</p>
             {cart.length > 2 ? <span className='aqua3'>আরও কিনলে বুজবো তুমি বড়োলোক💲💵</span> : <span className='aqua2'>ফকির দূরে গিয়া মর😏😡 </span>}
             {message}
             {
@@ -48,4 +49,6 @@ export default Cart;
 
 /**
  * Conditional Css class
+ * 1. use ternary operator
+ * 2. ternary inside template string
  */
